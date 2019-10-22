@@ -1,0 +1,91 @@
+public class NhanVien {
+	private String name;
+	private int age;
+	private String address;
+	private double salary;
+	private int timeWork;
+
+	public NhanVien() {
+		
+	}
+
+	public NhanVien(String name, int age, String address, double salary, int timeWork) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.salary = salary;
+		this.timeWork = timeWork;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public int getTimeWork() {
+		return timeWork;
+	}
+
+	public void setTimeWork(int timeWork) {
+		this.timeWork = timeWork;
+	}
+
+	public void inputInfo() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("nhap ten : ");
+		name = scanner.nextLine();
+		System.out.print("nhap tuoi : ");
+		age = scanner.nextInt();
+		scanner = new Scanner(System.in);
+		System.out.print("nhap dia chi : ");
+		address = scanner.nextLine();
+		System.out.print("nhap tien luong : ");
+		salary = scanner.nextDouble();
+		System.out.print("nhap tong gio lam : ");
+		timeWork = scanner.nextInt();
+	}
+
+	public double tinhThuong() {
+		double tienThuong = 0;
+		if (timeWork >= 200)
+			tienThuong = salary * 20 / 100;
+		else if (timeWork < 200 && timeWork >= 100)
+			tienThuong = salary * 10 / 100;
+		return tienThuong;
+	}
+
+	public void printInfo() {
+		System.out.println("ten nhan vien : " + name);
+		System.out.println("tuoi : " + age);
+		System.out.println("dia chi : " + address);
+		System.out.println("tien luong : " + salary);
+		System.out.println("tong so gio lam : " + timeWork);
+	}
